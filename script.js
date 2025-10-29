@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
+    const elements = document.querySelectorAll('.value, .card, .benefit, .testimonial-card, .service-item, .team-member, .blog-post');
+    elements.forEach(el => observer.observe(el));
+
     // Fixed header on scroll
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
@@ -35,13 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navUl = document.querySelector('nav ul');
 
-    if (menuToggle && navLinks) {
+    if (menuToggle && navUl) {
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+            navUl.classList.toggle('active');
         });
     }
 });
